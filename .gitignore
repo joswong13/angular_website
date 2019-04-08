@@ -2,11 +2,14 @@
 
 # firebase
 /.firebase
+/package-lock.json
+/package.json
 e2e
 src/environments
 /.firebaserc
 firebase.json
 /firebase.json
+
 # compiled output
 /dist
 /tmp
