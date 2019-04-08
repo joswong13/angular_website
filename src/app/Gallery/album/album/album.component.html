@@ -1,0 +1,15 @@
+<div>
+  <form class="form-width">
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Album Name" [formControl]="albumName">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearName()">    
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</form>
+<button type="submit" mat-flat-button color="primary"(click)="sendToDB()">Add</button>
+</div>
+<div>
+    <app-album-list></app-album-list>
+</div>

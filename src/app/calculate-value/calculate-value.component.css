@@ -1,0 +1,11 @@
+.form-width{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.button-row{
+    padding: 40px
+}

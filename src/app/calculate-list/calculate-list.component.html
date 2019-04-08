@@ -1,0 +1,22 @@
+<!-- <div>
+  <div class="panel-heading">{{element.name}}</div>
+  <div class="panel-body">
+    <p>
+      <strong>{{element.price}}</strong>
+    </p>
+  </div>
+</div> -->
+
+<mat-list class="full-width">
+  <mat-list-item class="full-width">
+    
+    <mat-icon mat-list-icon *ngIf="element.contentValue === 'Best'" color="primary">done</mat-icon>
+    <mat-icon mat-list-icon *ngIf="element.contentValue === 'Not'" color="accent">close</mat-icon>
+    <h4 mat-line *ngIf="element.contentValue === 'Best'" class="color-best">Best Value!!</h4>
+    <h4 mat-line *ngIf="element.contentValue === 'Best'" class="color-best">Item Name: {{element.name}}</h4>
+    <h4 mat-line *ngIf="element.contentValue === 'Not'" class="color-not">Item Name: {{element.name}}</h4>
+    <p mat-line>${{element.price}}/{{element.units}} units</p>
+    <button type="submit" mat-flat-button color="primary" (click)="deleteThisLine()">Delete</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

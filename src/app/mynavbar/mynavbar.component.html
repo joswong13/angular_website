@@ -1,0 +1,63 @@
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a *ngIf="!(user|async)?.uid" class="navbar-brand" routerLink="/login">JosWong</a>
+    <a *ngIf="(user|async)?.uid" class="navbar-brand" routerLink="/" (click)="logout()">Logout</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/calculate">Value Calculator</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/gallery">Gallery</a>
+        </li>
+        <li *ngIf="(user|async)?.uid" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin">Photo Admin</a>
+        </li>
+      </ul>
+        
+    </div>
+  </nav> -->
+
+  <mat-toolbar *ngIf="!navBarDropDown" color="primary" (window:resize)="onResize($event)">
+    <button mat-button *ngIf="!(user|async)?.uid" routerLink="/login">JosWong</button>
+    <button mat-button *ngIf="(user|async)?.uid" routerLink="/" (click)="logout()">Logout</button>
+    <button mat-button routerLink="" >Home</button>
+    <button mat-button routerLink="/calculate">Value Calculator</button>
+    <button mat-button routerLink="/gallery" >Gallery</button>
+    <button mat-button routerLink="/version" >Version</button> 
+    <button mat-button *ngIf="(user|async)?.uid" routerLink="/admin">Photo Admin</button>
+    <button mat-button *ngIf="(user|async)?.uid" routerLink="/test" >Test</button>
+  </mat-toolbar>
+  <mat-toolbar *ngIf="navBarDropDown" color="primary" (window:resize)="onResize($event)">
+      <button mat-button *ngIf="!(user|async)?.uid" routerLink="/login">JosWong</button>
+      <button mat-button *ngIf="(user|async)?.uid" routerLink="/" (click)="logout()">Logout</button>
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="" >
+              <mat-icon>home</mat-icon>
+              <span>Home</span>
+          </button>
+          <button mat-menu-item routerLink="/calculate">
+            <mat-icon>input</mat-icon>
+            <span>Value Calculator</span>
+          </button>
+          <button mat-menu-item routerLink="/gallery" >
+            <mat-icon>collections</mat-icon>
+            <span>Gallery</span>
+          </button>
+          <button mat-menu-item routerLink="/version" >
+            <mat-icon>developer_mode</mat-icon>
+            <span>Version</span>
+          </button>
+          <button mat-menu-item *ngIf="(user|async)?.uid" routerLink="/admin">Photo Admin</button>
+          <button mat-menu-item *ngIf="(user|async)?.uid" routerLink="/test">Test</button>
+          
+      </mat-menu>
+  </mat-toolbar>

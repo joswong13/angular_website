@@ -1,0 +1,19 @@
+<div>
+  <!-- <h1>Calculate Display Page</h1> -->
+  <p mat-line class="full-width">What is this?</p>
+        <p mat-line class="full-width">This is a calculator to for determining the best value of a given item. (Dollar/Unit)</p>
+        <p mat-line class="full-width">How to use:</p>
+        <p mat-line class="full-width">Enter an item name, the price of an item, and the units of measurement for an item. Then press add to add the item to the list to see which item gives the best value for each dollar.</p>
+  <app-calculate-value (itemCreated)="onItemAdded($event)"></app-calculate-value>
+</div>
+<div>
+
+    <mat-list>
+        <h3 class="full-width" mat-subheader>List of Items</h3>
+        <mat-divider></mat-divider>
+        <app-calculate-list *ngFor="let listElement of listOfItems"
+        [element]="listElement" (deleteButtonPressed)="itemDelete($event)"></app-calculate-list>
+        
+      </mat-list>
+  
+</div>

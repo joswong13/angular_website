@@ -1,0 +1,30 @@
+
+<div>
+
+    <p>
+        Welcome to my page!
+        My name is Joseph and this is my site built with Angular 6.
+        Currently, this site contains my resume (below), a value calculator component and an image gallery component. 
+        Feel free to browse around and enjoy your stay!
+        If you want to check out my GitHub, click <a href="https://github.com/joswong13" target="_blank">HERE</a>.
+    </p>
+    <br>
+    <!-- <p>{{initWindowSide}}</p> -->
+    <mat-divider></mat-divider>
+    <br>
+    <button *ngIf="hideButton" type="submit" mat-flat-button color="primary" (click)="showResume()">Hide my resume</button>    
+    <button *ngIf="showButton" type="submit" mat-flat-button color="primary" (click)="showResume()">Show my resume</button>
+</div>
+<div style="padding: 25px; height: 100vh">
+    
+    <object *ngIf="isVisible">
+        <mat-divider></mat-divider>
+        <br>
+        <embed src="assets/pdf/Resume.pdf" type="application/pdf" height="100%" width="100%">
+    </object>
+
+
+
+
+
+</div>

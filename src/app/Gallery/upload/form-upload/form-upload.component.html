@@ -1,0 +1,33 @@
+<mat-card>
+	<h2>Upload New Images</h2>
+	<div *ngIf="currentFileUpload">
+
+		<mat-progress-bar mode="determinate" value="{{progress.percentage}}"></mat-progress-bar>
+
+		<!-- <div class="progress-bar progress-bar-info progress-bar-striped"
+				role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+				aria-valuemin="0" aria-valuemax="100"
+				[ngStyle]="{width:progress.percentage+'%'}">
+				{{progress.percentage}}%
+		</div> -->
+	</div>
+	<div>
+		<label class="btn btn-default"> 
+			<input type="file" (change)="selectFile($event)" multiple>
+		</label>
+
+	</div>
+	<div>
+		<mat-select placeholder="Select Album" [(value)]="selected">
+			<mat-option *ngFor="let album of albumArray" [value]="album.name">
+				{{album.name}}
+			</mat-option>
+
+		</mat-select>
+		<p>You have selected {{selected}}</p>
+	</div>
+	<br>
+	<button mat-flat-button [disabled]="!selectedFiles || !selected"	(click)="upload()">Upload</button>
+
+</mat-card>
+

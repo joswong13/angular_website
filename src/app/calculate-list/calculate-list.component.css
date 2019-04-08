@@ -1,0 +1,18 @@
+.mat-divider{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+}
+.mat-list{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    display: inline-block;
+}
+.color-best{
+    color:#4747d1;
+}
+.color-not{
+    color:#ff0000;
+}

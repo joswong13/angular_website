@@ -1,0 +1,26 @@
+
+<div>
+  <form class="form-width">
+
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Email" [formControl]="email">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearEmail()">    
+              <mat-icon>close</mat-icon>
+          </button>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width">
+          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearPassword()">    
+              <mat-icon>close</mat-icon>
+          </button>
+      </mat-form-field>
+      <br>
+      <div class="button-row">
+          <button type="submit" [disabled]="email.invalid || password.invalid" mat-flat-button color="primary" (click)="login()">Login</button>
+      </div>
+
+  </form>
+</div>
+
+

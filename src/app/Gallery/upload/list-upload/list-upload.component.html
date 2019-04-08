@@ -1,0 +1,47 @@
+<!-- <div class="panel panel-primary">
+  <div class="panel-heading">Albums</div>
+  <div *ngFor="let albums of test">
+    <a (click)="enterAlbum(albums[0].basepath)">
+      <img src="{{albums[0].url}}" alt="{{albums[0].name}}" style="max-width:150px" />
+      <p>{{albums[0].basepath}}</p>
+    </a>
+    
+    <div class="panel-body">
+      <details-upload [fileUpload]='file'></details-upload>
+    </div>
+  </div>
+  (click)="enterAlbum(albums)"
+</div> -->
+<!-- <div class="row">
+    <h2>Gallery</h2>
+    <ul id="thumbnailsList">
+        <li *ngFor="let albums of test" class="img">
+            
+            <a routerLink="/viewalbum" (click)="enterAlbum(albums,albums[0].basepath)">
+              
+              <img src="{{albums[0].url}}" class="tn">
+            
+            </a>
+            <p>{{albums[0].basepath}}</p>
+        </li>
+    </ul>
+    class="tn"
+</div> -->
+<mat-grid-list cols="{{breakpoint}}" rowHeight="180px" (window:resize)="onResize($event)">
+  <mat-grid-tile  *ngFor="let albums of test">
+    <mat-card>
+      
+      <mat-card-content>
+        <a routerLink="/viewalbum" (click)="enterAlbum(albums,albums[0].basepath)">
+              
+          <img mat-card-image src="{{albums[0].url}}" >
+    
+        </a>
+
+        {{albums[0].basepath}}
+      </mat-card-content>
+      
+    </mat-card>
+    
+  </mat-grid-tile>
+</mat-grid-list>

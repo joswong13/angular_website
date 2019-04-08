@@ -1,0 +1,18 @@
+<!-- {{fileUpload.name}}
+<button (click)='deleteFileUpload(fileUpload)' class="btn btn-danger btn-xs" style="float: right">Delete</button>
+<img src="{{fileUpload.url}}" alt="{{fileUpload.name}}" style="max-width:350px" /> -->
+<!-- <div class="row">
+    <div class=col-md-12>
+        <button *ngIf="isLogged" (click)='deleteFileUpload(image)' class="btn btn-danger btn-xs" style="float: right">Delete</button>
+        <div [ngStyle]="{'background-image':'url('+ image.url +')'}" 
+            class="img-container">
+
+        </div>
+    </div>
+</div> -->
+<mat-card>
+    <mat-card-actions *ngIf="isLogged">
+        <button mat-flat-button color="warn" (click)='deleteFileUpload(image)'>Delete</button>
+    </mat-card-actions>
+    <img mat-card-image src="{{image.url}}">
+</mat-card>

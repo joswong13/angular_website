@@ -1,0 +1,47 @@
+
+<div>
+    <form class="form-width">
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Name" [formControl]="itemName">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearName()">    
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Price" [formControl]="priceFormControl">
+            <mat-hint align='start'>Enter a dollar value of the item.</mat-hint>
+            <mat-error *ngIf="priceFormControl.errors">Eg. 12.99</mat-error>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearPrice()">    
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Units" [formControl]="unitsFormControl">
+            <mat-hint align='start'>If item is 100g, put 100.</mat-hint>
+            <mat-error *ngIf="unitsFormControl.errors">Eg. 100</mat-error>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="clearUnit()">    
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="button-row">
+            <button type="submit" mat-flat-button color="primary" [disabled]="unitsFormControl.errors || priceFormControl.errors || !itemName.value" (click)="sendToArray()">Add</button>
+        </div>
+
+    </form>
+</div>
+
+
+<!-- <div>
+    <label for="nameOfItem1">Name of Item:</label>
+    <input id="nameOfItem1" type="text" [(ngModel)]="name">
+    <p>{{itemName}}</p>
+    <label for="price">Price of Item:</label>
+    <input id="price" type="text" [(ngModel)]="priceOfItem" (input)="checkNum($event)">
+    <p>{{priceOfItem}}</p>
+
+</div> -->
+
+

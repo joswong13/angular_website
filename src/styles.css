@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body{
+    text-align: center;
+    min-height: 100%;
+}
+form{
+    display: inline-block;
+}
+label{
+    padding-right:15px
+}
+.template{
+    padding:3rem 1.5rem;
+    text-align: center;
+}
+

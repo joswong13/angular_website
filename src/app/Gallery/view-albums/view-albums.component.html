@@ -1,0 +1,33 @@
+<!-- <div class="row">
+    <h2>{{albumName}}</h2>
+    <ul id="thumbnailsList">
+      <li *ngFor="let images of albumArray" class="img">
+          <a [routerLink]="['/image', images.key]" (click)="sendAlbumBasePath(images)">
+            <img src="{{images.url}}" class="tn">
+          </a>
+      </li>
+    </ul>
+</div> -->
+
+<h2>{{albumName}}</h2>
+<mat-grid-list cols="{{breakpoint}}" rowHeight="180px" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let images of albumArray">
+      <mat-card>
+          
+        <!-- <a (click)="openDialog(images.url)">
+                
+          <img mat-card-image src="{{images.url}}">
+    
+        </a> -->
+        <img mat-card-image src="{{images.url}}">
+        <!-- <mat-card-actions *ngIf="isLogged">
+            <button mat-flat-button color="warn" (click)='deleteFileUpload(images)'>Delete</button>
+        </mat-card-actions> -->
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+<!-- <router-outlet></router-outlet> -->
+<!-- <a [routerLink]="['/image', images.key]" (click)="sendAlbumBasePath(images)"></a> -->
+<!-- <a [routerLink]="['/image', images.key]" (click)="sendAlbumBasePath(images)"></a> -->
