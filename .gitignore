@@ -4,7 +4,9 @@
 /.firebase
 e2e
 src/environments
-
+/.firebaserc
+firebase.json
+/firebase.json
 # compiled output
 /dist
 /tmp
