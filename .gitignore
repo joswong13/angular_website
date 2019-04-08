@@ -2,8 +2,8 @@
 
 # firebase
 /.firebase
-/e2e
-/src/environments
+e2e
+src/environments
 
 # compiled output
 /dist
